@@ -5,9 +5,7 @@ Une application Full-Stack qui permet d'obtenir instantanément une fiche de lec
 L'objectif de ce projet était de construire un outil capable d'ingérer et de synthétiser des données issues d'API tierces en optimisant le traitement des tokens envoyés au LLM.
 
 ## 🔗 Liens du projet
-* **Démo en ligne :** [COLLE_TON_LIEN_VERCEL]
-* **API Backend :** [COLLE_TON_LIEN_RENDER]
-
+* **Démo en ligne :** [https://dev-summarizer.vercel.app](https://dev-summarizer.vercel.app)
 ---
 
 ## 🛠️ Stack technique & Choix d'architecture
