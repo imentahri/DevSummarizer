@@ -1,0 +1,25 @@
+# Dépendances
+node_modules/
+**/node_modules/
+
+# Variables d'environnement (JAMAIS commit ces fichiers !)
+.env
+**/.env
+# Mais on garde les .env.example comme modèles
+
+# Build outputs
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
