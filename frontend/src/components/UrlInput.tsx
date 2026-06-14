@@ -7,8 +7,7 @@ interface UrlInputProps {
   isLoading: boolean;
 }
 
-// Validation basique côté frontend pour un retour immédiat à l'utilisateur
-// (le backend fait une validation plus complète)
+
 function isValidGitHubUrl(url: string): boolean {
   try {
     const { hostname } = new URL(url);
@@ -18,7 +17,7 @@ function isValidGitHubUrl(url: string): boolean {
   }
 }
 
-// Exemples de repos intéressants à tester — utile pour les recruteurs
+
 const EXAMPLE_REPOS = [
   { label: 'React', url: 'https://github.com/facebook/react' },
   { label: 'FastAPI', url: 'https://github.com/tiangolo/fastapi' },

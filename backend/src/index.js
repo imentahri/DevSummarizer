@@ -6,8 +6,7 @@ const { analyzeRepo } = require('./analyzer');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// ─── CORS ────────────────────────────────────────────────────────────────────
-// En dev : on accepte localhost:5173 (Vite). En prod : on lit FRONTEND_URL.
+
 const allowedOrigins = [
   'http://localhost:5173',
   process.env.FRONTEND_URL,
@@ -15,7 +14,6 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: (origin, callback) => {
-    // Autoriser les requêtes sans origine (Postman, tests curl...)
     if (!origin) return callback(null, true);
     if (allowedOrigins.includes(origin)) return callback(null, true);
     callback(new Error(`CORS bloqué pour l'origine : ${origin}`));
@@ -26,14 +24,11 @@ app.use(cors({
 
 app.use(express.json());
 
-// ─── HEALTH CHECK ─────────────────────────────────────────────────────────────
 app.get('/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// ─── ROUTE PRINCIPALE ─────────────────────────────────────────────────────────
-// POST /api/analyze
-// Body: { repoUrl: "https://github.com/owner/repo" }
+
 app.post('/api/analyze', async (req, res) => {
   const { repoUrl } = req.body;
 
@@ -50,7 +45,6 @@ app.post('/api/analyze', async (req, res) => {
   } catch (err) {
     console.error('[/api/analyze] Erreur :', err.message);
 
-    // On mappe les erreurs métier vers des codes HTTP lisibles
     const errorMap = {
       INVALID_URL:       400,
       REPO_NOT_FOUND:    404,

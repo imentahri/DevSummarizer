@@ -1,10 +1,5 @@
 // types/analysis.ts — Types TypeScript pour la réponse de l'API
-//
-// Pourquoi TypeScript ?
-// TypeScript = JavaScript + types. On définit ici la "forme" (shape) des données
-// que le backend va renvoyer. Si on fait une faute de frappe (result.satck au lieu
-// de result.stack), TypeScript nous signale l'erreur AVANT d'exécuter le code.
-// C'est comme un filet de sécurité pendant le développement.
+
 
 export interface Stack {
   languages: string[];
@@ -22,7 +17,7 @@ export interface Architecture {
 
 export interface Complexity {
   level: 'Débutant' | 'Intermédiaire' | 'Avancé' | 'Expert';
-  score: number; // 1-10
+  score: number; 
   rationale: string;
 }
 
@@ -63,7 +58,6 @@ export interface AnalysisResult {
   meta: AnalysisMeta;
 }
 
-// Réponse complète de l'API
 export interface ApiResponse {
   success: boolean;
   data: AnalysisResult;

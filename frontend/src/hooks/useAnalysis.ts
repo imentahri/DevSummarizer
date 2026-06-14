@@ -4,8 +4,7 @@
 import { useState, useCallback } from 'react';
 import type { AnalysisResult, ApiError } from '../types/analysis';
 
-// URL du backend — en prod on lit la variable d'env Vite (VITE_API_URL)
-// En dev, le proxy Vite redirige /api vers localhost:3001 automatiquement
+
 const API_BASE = import.meta.env.VITE_API_URL ?? '';
 
 type AnalysisState =
@@ -21,8 +20,7 @@ export function useAnalysis() {
     setState({ status: 'loading', step: 'Connexion à GitHub...' });
 
     try {
-      // Simuler des étapes de progression pour l'UX
-      // (l'appel réel est asynchrone mais on n'a pas de streaming ici)
+      
       const progressSteps = [
         'Connexion à GitHub...',
         'Sélection intelligente des fichiers...',

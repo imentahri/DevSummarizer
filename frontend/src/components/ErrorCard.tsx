@@ -6,7 +6,6 @@ interface ErrorCardProps {
   onRetry: () => void;
 }
 
-// Messages d'aide contextuels selon le code d'erreur
 const ERROR_HINTS: Record<string, string> = {
   INVALID_URL: 'Exemple valide : https://github.com/facebook/react',
   REPO_NOT_FOUND: 'Vérifie l\'orthographe de l\'URL. Le repo existe-t-il encore ?',
